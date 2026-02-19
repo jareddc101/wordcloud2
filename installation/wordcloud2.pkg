@@ -1,0 +1,18 @@
+v 1.23
+d {bf:WORDCLOUD2}: A Stata package for generating word clouds.
+d See {helpb wordcloud2} after installation.
+d
+d Requires: Stata version 15 or higher.
+d
+d KW: Stata
+d KW: graphs
+d KW: wordcloud
+d
+d Distribution-Date: 20260219
+d
+d This  version: 19 Feb 2026
+d First version: 19 Feb 2026
+d License: MIT
+d
+f wordcloud2.ado
+f wordcloud2.sthlp

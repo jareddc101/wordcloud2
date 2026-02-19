@@ -1,0 +1,8 @@
+v 1.0
+d 'WORDCLOUD2': A Stata package for generating word clouds natively in Stata's graph editor.
+d
+d Distribution-Date: 20260219
+d
+d Jared Colston
+d
+p wordcloud2

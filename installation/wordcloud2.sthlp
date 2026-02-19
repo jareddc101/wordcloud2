@@ -49,7 +49,7 @@ I have excluded some common words from the graphic to improve clarity. Currently
 {title:Examples} 
 
 Use random text data generated for this purpose.
-{p 4 8 2}{cmd:. import excel "C:\Users\colston\Desktop\public_data\stata_packages\wordcloud2\wordcloud_sample.xlsx", clear firstrow}{p_end}
+{p 4 8 2}{cmd:. import excel "https://raw.githubusercontent.com/jareddc101/wordcloud2/refs/heads/main/wordcloud2_sample.xlsx", clear firstrow}{p_end}
 
 Simple syntax using default options.
 {p 4 8 2}{cmd:. wordcloud2 long_response}{p_end}

@@ -56,57 +56,53 @@ Colston, J. (2026). Stata package "wordcloud2" version 1.0. Release date 19 Febr
 
 ## Examples
 
+Use random text data generated for this package.
+
 ```stata
-import delimited "https://raw.githubusercontent.com/jdcols01/trendline/refs/heads/main/world_gdp.csv", clear
-encode region, gen(regnum)
+import excel "https://raw.githubusercontent.com/jareddc101/wordcloud2/refs/heads/main/wordcloud2_sample.xlsx", clear
 ```
 
-Overall trend lines when no category is specified:
+Simple syntax using default options:
 
 ```
-trendline gdp_percap, time(year)
+wordcloud2 long_response
 ```
 
 <img src="/figures/figure1.png" width="100%">
 
-Create trend lines by category:
+Adjust the word count to examine the impact on relative frequency:
 
 ```
-trendline gdp_percap, time(year) category(regnum)
+gen response_dup = long_response
+replace response_dup = "me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me" if survey_id == 4
+wordcloud2 response_dup
 ```
 
 <img src="/figures/figure2.png" width="100%">
 
-Change the aggregate statistic:
+Change the palette to an available option in colorpalette:
 ```
-trendline gdp_percap, time(year) category(regnum) statistic(median)
+wordcloud2 response_dup, pal(economist)
 ```
 
 <img src="/figures/figure3.png" width="100%">
 
 
-Condition the trend lines based on select categories:
+Change the palette to a single color for all words in the cloud:
 
 ```
-trendline gdp_percap if inlist(regnum,1,2), time(year) category(regnum)
+wordcloud2 long_response, palette(black)
 ```
 
 <img src="/figures/figure4.png" width="100%">
 
-Use all of the other twoway line options:
+Use all other twoway options:
 
 ```
-trendline gdp_percap if inlist(regnum,1,2), time(year) category(regnum) lpattern(dash)
+wordcloud2 response_dup, pal(carto) name(wordcloud_test, replace) title("Jared's Wordcloud") subtitle("Just a test") note("These data are random.")
 ```
 
 <img src="/figures/figure5.png" width="100%">
-
-
-```
-trendline gdp_percap if inlist(regnum,1,2), time(year) category(regnum) lpattern(dash) scheme(s2color)
-```
-
-<img src="/figures/figure6.png" width="100%">
 
 ## Feedback
 

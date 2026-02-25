@@ -1,8 +1,8 @@
 # wordcloud2
 Stata package to generate word clouds natively in Stata's graph editor without transforming your text data.
 
-# wordcloud2 v1.0
-(19 Feb 2026)
+# wordcloud2 v1.1
+(25 Feb 2026)
 
 This package provides the ability to create word cloud plots from text data natively in Stata's graph editor.
 
@@ -25,7 +25,7 @@ The syntax for the latest version is as follows:
 
 ```stata
 wordcloud2 strvar [if] [in], 
-               [palette(color_palette_options) title(title_options) subtitle(subtitle_options) note(note_options) graph_options]
+               [palette(color_palette_options) exclude(stringlist) keepcommon wordcount(int) wordsize(real) title(title_options) subtitle(subtitle_options) note(note_options) graph_options]
 ```
 
 See the help file `help wordcloud2` for details.
@@ -41,15 +41,15 @@ Software packages take countless hours of programming, testing, and bug fixing. 
    author = {Colston, Jared},
    title = {Stata package ``wordcloud2''},
    url = {https://github.com/jareddc101/wordcloud2},
-   version = {1.0},
-   date = {2026-02-19}
+   version = {1.1},
+   date = {2026-02-25}
 }
 ```
 
 *or simple text*
 
 ```
-Colston, J. (2026). Stata package "wordcloud2" version 1.0. Release date 19 February 2026. https://github.com/jareddc101/wordcloud2.
+Colston, J. (2026). Stata package "wordcloud2" version 1.1. Release date 25 February 2026. https://github.com/jareddc101/wordcloud2.
 ```
 
 
@@ -110,6 +110,11 @@ Please open an [issue](https://github.com/jareddc101/wordcloud2/issues) to repor
 
 
 ## Change log
+
+**v1.1 (25 Feb 2026)**
+- Added options for user-input exclusions
+- Added ability to keep common words I automatically exclude
+- Added ability to adjust number of unique words to include and adjust size of the words in the cloud
 
 **v1.0 (19 Feb 2026)**
 - First release

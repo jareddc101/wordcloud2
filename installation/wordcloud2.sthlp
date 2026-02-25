@@ -8,6 +8,10 @@ wordcloud2: Generate word clouds natively in Stata's graph editor without transf
 [{help if}] 
 [{help in}]{cmd:,}
 [{cmdab:pal:ette(}{it:string}{cmd:)} 
+{cmdab:exc:lude(}{it:stringlist}{cmd:)} 
+{cmdab:keep:common}
+{cmdab:wordc:ount(}{it:int}{cmd:)} 
+{cmdab:words:ize(}{it:real}{cmd:)} 
 {cmdab:t:itle(}{it:string}{cmd:)}
 {cmdab:sub:title(}{it:string}{cmd:)}
 {cmdab:n:ote(}{it:string}{cmd:)}
@@ -30,6 +34,26 @@ The graph plot placements are generated randomly. If you do not like the placeme
 You can also specify a single color value in this option, such as {it:gs6}, if you do not want any variation in color.
 
 {p 4 8 2}
+{cmd:exclude()} allows users to exclude specific words from the cloud. Enter the values as distinct strings separated by a space. Include all words as lower case without non-letter characters. 
+Example: {cmd:exclude("product" "easy" "im" "its")}
+
+{p 4 8 2}
+{cmd:keepcommon} specifies that you would like to include common words that I have automatically removed from the cloud. 
+This can be specified in combination with {cmd:exclude()} for complete control over which words are included.
+I have chosen common words such as "a", "this", "to", etc. to remove. I have also removed non-ASCII characters as a default.
+This option adds all of those exclusions back into the graph.
+
+{p 4 8 2}
+{cmd:wordcount()} specifies the total unique number of words to include in the cloud. 
+This program sorts the data by word frequency, with the default option keeping the top 25 most common words from your input.
+Extending the word count to 40 would keep the top 40 most common words, and so on. The maximum allowable unique words is 3,000.
+
+{p 4 8 2}
+{cmd:wordsize()} adjusts the size of each word in the plot. The input is based on scale, with the default being 1.25.
+If you would prefer the entire graph to increase in size, you could specify {cmd:wordsize(1.5)}. 
+It is unlikely a scaled size greater than 2 will be of much use.
+
+{p 4 8 2}
 {cmd:title()} allows all options available under {help twoway}.
 
 {p 4 8 2}
@@ -40,11 +64,6 @@ You can also specify a single color value in this option, such as {it:gs6}, if y
 
 {p 4 8 2}
 Select {it:graph_options} are allowed with this command. 
-
-{title:Word Exclusions}
-I have excluded some common words from the graphic to improve clarity. Currently, the words that are excluded are:
-    {p 4 8 2}
-    a, this, the, i, to, it, at, did, and, not
 
 {title:Examples} 
 
